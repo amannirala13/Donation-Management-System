@@ -21,7 +21,7 @@ const PORT = 8080;
 // Using body parser to extract POST request body
 app.use(bodyParser.json());
 app.use(cors({
-    origin: ["http://localhost:5173", "http://172.20.10.2:5173", "https://2628-2409-40f4-2a-c613-e984-5277-5306-12cd.ngrok-free.app"]
+    origin: ["http://localhost:5173", "http://172.20.10.2:5173", "http://172.20.10.2:3000", "http://localhost:3000"]
 }));
 
 

@@ -5,7 +5,6 @@ import AccountStatus from "../const/AccountStatus.js";
 import {ReferralNetworkMongoModel, UserMongoModel} from "../database/DBModels.js";
 import {ReferralNetworkModel} from "../models/referral/ReferralNetworkModel.js";
 import {userEmailExists} from "../database/check/userEmailExists.js";
-import updateNewUserReferralNetwork from "../database/update/updateNewUserReferralNetwork.js";
 
 export async function registerUser(req: Request, res: Response) {
 
@@ -43,7 +42,7 @@ export async function registerUser(req: Request, res: Response) {
             user.registeredOn = new Date();
             user.lastLoginOn = new Date();
             user.accountStatus = AccountStatus.UNVERIFIED;
-            user.amount = 0;
+            /*user.amount = 0;*/
             user.isEmailVerified = false;
 
             const referralNetwork = new ReferralNetworkModel(
@@ -63,10 +62,7 @@ export async function registerUser(req: Request, res: Response) {
             let refNet = null
             try{
                 newUser = UserMongoModel(user.toObj());
-                refNet = ReferralNetworkMongoModel(referralNetwork.toObj());
                 await newUser.save();
-                await refNet.save();
-                await updateNewUserReferralNetwork(user);
             } catch (e){
                 await newUser?.deleteOne();
                 await refNet?.deleteOne();

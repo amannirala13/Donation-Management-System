@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import { Button, Input } from "@chakra-ui/react";
-import logo from "../../assets/logo1.png";
+import logo from "../../logo.svg";
 import {useState} from "react";
 import loginUser from "../../auth/loginUser.js";
 import {useNavigate} from "react-router-dom";
@@ -63,7 +63,7 @@ export const LoginContainer = ({ className, children }) => {
                 <div className="grid grid-cols-1 lg:grid-cols-2 m-auto">
                     <div className=" w-full place-content-center m-auto hidden lg:block">
                         <img className="w-fit h-fit object-fill" src={logo} alt="img" />
-                        <div className={"lg:text-2xl text-lg mt-2 font-bold"}>Innovating investments and technology</div>
+                        <div className={"lg:text-2xl text-lg mt-2 font-bold"}>Bring a change</div>
                     </div>
                     <div className="p-5 py-[150px] flex justify-center">
                         <form className>

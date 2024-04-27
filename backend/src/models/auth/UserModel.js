@@ -2,13 +2,6 @@ import {Schema} from "mongoose";
 import {DateOfBirth} from "../general/DateOfBirth.js";
 
 export class UserModel{
-    get amount(): number {
-        return this._amount;
-    }
-
-    set amount(value: number) {
-        this._amount = value;
-    }
     get uuid(): string {
         return this._uuid;
     }
@@ -134,7 +127,6 @@ export class UserModel{
                 month: this._dob.month,
                 year: this._dob.year
             },
-            amount: this._amount,
             accountStatus: this._accountStatus,
             isEmailVerified: this._isEmailVerified,
             referralCode: this._referralCode,
@@ -158,7 +150,6 @@ export class UserModel{
                     jsonData.dob.day,
                     jsonData.dob.month,
                     jsonData.dob.year),
-                jsonData.amount,
                 jsonData.accountStatus,
                 jsonData.isEmailVerified,
                 jsonData.referralCode,
@@ -179,7 +170,6 @@ export class UserModel{
                     firstName: String,
                     middleName: String,
                     lastName: String,
-                    amount: Number,
                     dob: {day: Number, month: Number, year: Number},
                     accountStatus: String,
                     isEmailVerified: Boolean,
@@ -213,7 +203,6 @@ export class UserModel{
      * @param middleName
      * @param lastName
      * @param dob
-     * @param amount
      * @param isEmailVerified
      * @param accountStatus
      * @param referralCode
@@ -230,7 +219,6 @@ export class UserModel{
         middleName: string = "",
         lastName: string = "",
         dob:? DateOfBirth = null,
-        amount: number = 0,
         isEmailVerified: boolean = false,
         accountStatus: string = "",
         referralCode: string = "",
@@ -245,7 +233,6 @@ export class UserModel{
         this._middleName = middleName;
         this._lastName = lastName;
         this._dob = dob;
-        this._amount = amount;
         this._accountStatus = accountStatus;
         this._referralCode = referralCode;
         this._referredBy = referredBy;

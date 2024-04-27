@@ -13,9 +13,9 @@ export const MainRoutes = [
 ]
 
 export const AuthRoutes = [
-    // getComponentObj(Paths.auth.register, <RegistrationContainer/>),
+    getComponentObj(Paths.auth.register, <RegistrationContainer/>),
     getComponentObj(Paths.auth.login, <LoginContainer/>),
-    // getComponentObj(Paths.auth.reset_password, <ForgotPasswordContainer/>),
+    getComponentObj(Paths.auth.reset_password, <ForgotPasswordContainer/>),
 ]
 
 export const DashboardRoutes = []
