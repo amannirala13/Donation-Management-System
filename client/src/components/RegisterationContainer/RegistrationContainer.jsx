@@ -156,8 +156,8 @@ export default function RegistrationContainer({className, children}){
                                value={referralCode}
                                onChange={(e)=>{setReferralCode(e.target.value)}}/>
                         <div className={"w-full flex justify-between mt-8"}>
-                            <Button variant={"link"} onClick={()=>{nav(`../${Paths.auth.login}`)}}>Already have an account?</Button>
-                            <Button className={"px-12"} size={"lg"} onClick={onSubmit}>Submit</Button>
+                            <Button colorScheme={"orange"} variant={"link"} onClick={()=>{nav(`../${Paths.auth.login}`)}}>Already have an account?</Button>
+                            <Button colorScheme={"orange"} className={"px-12"} size={"lg"} onClick={onSubmit}>Submit</Button>
                         </div>
                     </div>
                 </div>

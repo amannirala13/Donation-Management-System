@@ -9,7 +9,6 @@ import useAuthToken from "./hooks/useAuthToken.js";
 import useCurrentUser from "./hooks/useCurrentUser.js";
 import getCurrentUserProfile from "./profile/getCurrentUserProfile.js";
 import useCurrentUserReferralNetwork from "./hooks/useCurrentUserReferralNetwork.js";
-import getReferralNetwork from "./referral/getReferralNetwork.js";
 
 
 function App() {
@@ -34,22 +33,15 @@ function App() {
           .catch((e)=>{
             console.error(e);
           });
-      getReferralNetwork(authToken.token)
-          .then((referralNetwork)=>{
-            setReferralNetwork(referralNetwork);
-          })
-          .catch((e)=>{
-            console.error(e);
-          })
     }
-    else
-      nav(`${Paths.main.auth}/${Paths.auth.login}`);
+/*    else
+      nav(`${Paths.main.auth}/${Paths.auth.login}`);*/
   }, [authToken]);
 
   useEffect(() => {
     if(currentUser.isLoaded){
       if(currentUser.data){
-        nav(Paths.main.dashboard);
+       /* nav(Paths.main.dashboard);*/
       }
     }
   }, [currentUser]);

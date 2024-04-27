@@ -24,7 +24,7 @@ app.use(cors({
     origin: ["http://localhost:5173", "http://172.20.10.2:5173", "http://172.20.10.2:3000", "http://localhost:3000"]
 }));
 
-// These routes doesn't require an auth token to be included in the request for access (for obvious reasons)
+// These routes don't require an auth token to be included in the request for access (for obvious reasons)
 app.post(`/${PathName.login}`, loginUser);
 app.post(`/${PathName.register}`, registerUser);
 app.post(`/${PathName.sendPasswordResetLink}`, sendPasswordResetLink);

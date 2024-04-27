@@ -5,9 +5,13 @@ import RegistrationContainer from "../components/RegisterationContainer/Registra
 import LoginContainer from "../components/LoginContainer/index.js";
 import {LoadingPage} from "../pages/LoadingPage";
 import ForgotPasswordContainer from "../components/ForgotPasswordContainer/index.js";
+import {CampaignDetails} from "../pages/Campaign/CampaignDetails";
+import {LandingPage} from "../pages/LandingPage/LandingPage";
+import {Dashboard} from "../pages/DashboardPage/Dashboard";
 
 export const MainRoutes = [
-    getComponentObj("", <LoadingPage/>),
+    getComponentObj("", <LandingPage/>),
+    getComponentObj("/campaign/:id", <CampaignDetails/>),
     getComponentObj(`${Paths.main.auth}/*`, <AuthPage/>),
     getComponentObj(`${Paths.main.dashboard}/*`, <DashboardPage/>),
 ]
@@ -18,7 +22,9 @@ export const AuthRoutes = [
     getComponentObj(Paths.auth.reset_password, <ForgotPasswordContainer/>),
 ]
 
-export const DashboardRoutes = []
+export const DashboardRoutes = [
+    getComponentObj("/", <Dashboard/>),
+]
 
 function getComponentObj(path, component){
     return  {route: `/${path}`, component: component}
