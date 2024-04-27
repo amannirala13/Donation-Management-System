@@ -88,6 +88,14 @@ export class DepositModel{
     set lastUpdated(value: string) {
         this._lastUpdated = value;
     }
+
+    get campaignId(): string {
+        return this._campaignId;
+    }
+    
+    set campaignId(value: string) {
+        this._campaignId = value;
+    }
     constructor(
         id: string,
         owner: string,
@@ -100,6 +108,7 @@ export class DepositModel{
         blockId: string,
         comment:? string,
         lastUpdated: string,
+        campaignId: string,
         ) {
         this._id = id;
         this._owner = owner;
@@ -112,5 +121,26 @@ export class DepositModel{
         this._blockId = blockId;
         this._comment = comment;
         this._lastUpdated = lastUpdated;
+        this._campaignId = campaignId;
     }
+
+
+    
+    static getSchema = (): Schema => {
+        return new mongoose.Schema({
+          id: { type: String, required: true },
+          owner: { type: String, required: true },
+          amount: { type: Number, required: true },
+          status: { type: String, required: true },
+          transactionDate: { type: Date, required: true },
+          toWallet: { type: String, required: true },
+          fromWallet: { type: String, required: true },
+          currency: { type: String, required: true },
+          blockId: { type: String, required: true },
+          comment: { type: String },
+          lastUpdated: { type: Date, required: true },
+          campaignId: { type: String, required: true },
+        });
+      };
+
 }

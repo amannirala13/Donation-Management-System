@@ -1,4 +1,5 @@
 import { Date } from "mongoose";
+ // reusining deposit as Donation
 
 export class CampaignModel {
   get id(): string {
@@ -73,13 +74,7 @@ export class CampaignModel {
     this._status = value;
   }
 
-  get donations(): DonationModel[] {
-    return this._donations;
-  }
 
-  set donations(value: DonationModel[]) {
-    this._donations = value;
-  }
 
   constructor(
     id: string,
@@ -91,7 +86,7 @@ export class CampaignModel {
     startDate: Date,
     endDate: Date,
     status: string,
-    donations: DonationModel[]
+
   ) {
     this._id = id;
     this._owner = owner;
@@ -102,6 +97,22 @@ export class CampaignModel {
     this._startDate = startDate;
     this._endDate = endDate;
     this._status = status;
-    this._donations = donations;
+
+  }
+
+
+
+  static getSchema(): any {
+    return {
+      id: String,
+      owner: String,
+      title: String,
+      description: String,
+      goalAmount: Number,
+      currentAmount: Number,
+      startDate: Date,
+      endDate: Date,
+      status: String,
+    };
   }
 }
