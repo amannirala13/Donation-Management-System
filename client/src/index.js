@@ -3,11 +3,22 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {BrowserRouter} from "react-router-dom";
+import {Provider} from "react-redux";
+import datastore from "./redux/datastore";
+import {ChakraProvider} from "@chakra-ui/react";
+import {ComponentPreviews, useInitial} from "./dev";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+      <BrowserRouter>
+              <Provider store={datastore}>
+                  <ChakraProvider useInitialHook={useInitial}>
+                          <App/>
+                  </ChakraProvider>
+              </Provider>
+      </BrowserRouter>
   </React.StrictMode>
 );
 
