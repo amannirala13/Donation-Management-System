@@ -102,7 +102,7 @@ export class CampaignModel {
 
 
 
-  static getSchema(): any {
+  static getSchema(){
     return {
       id: String,
       owner: String,

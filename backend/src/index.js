@@ -12,7 +12,9 @@ import database from "./database/index.js";
 import cors from "cors";
 import {sendPasswordResetLink} from "./auth/SendPasswordResetLink.js";
 import * as dns from "dns";
-
+import { getCampaignById } from "./database/get/getCampaignById.js";
+import { getAllCampaigns } from "./database/get/getAllCampaigns.js";
+import  {updateCampaignById} from "./database/update/updateCampaignById.js";
 
 // Init express app and defining PORT number
 const app = express();
@@ -29,9 +31,17 @@ app.post(`/${PathName.login}`, loginUser);
 app.post(`/${PathName.register}`, registerUser);
 app.post(`/${PathName.sendPasswordResetLink}`, sendPasswordResetLink);
 
+
+app.get(`/${PathName.getCampaignById}`, getCampaignById);
+app.get(`/${PathName.getAllCampaigns}`, getAllCampaigns);
+
+app.put(`/${PathName.updateCampaignById}`, updateCampaignById);
+
 // Using AuthPage middlewares
 app.use(authHeaderMiddleWare);
 app.use(authMiddleWare);
+
+
 
 // Using router post AuthPage middlewares -- Needs auth token to be bound in the request for restricted access
 app.use("/", Router);
