@@ -11,6 +11,7 @@ import PathName from "./routing/PathName.js";
 import database from "./database/index.js";
 import cors from "cors";
 import {sendPasswordResetLink} from "./auth/SendPasswordResetLink.js";
+import * as dns from "dns";
 
 
 // Init express app and defining PORT number
@@ -35,11 +36,13 @@ app.use(authMiddleWare);
 // Using router post AuthPage middlewares
 app.use("/", Router);
 
+dns.setServers(['8.8.8.8', '8.8.4.4']);
+
 // Environment variables config
 dotenv.config();
 
 // Connecting to MongoDB
-database();
+database(process.env.MONGO_URL);
 
 // Starting server
 app.listen(PORT, ()=>{
