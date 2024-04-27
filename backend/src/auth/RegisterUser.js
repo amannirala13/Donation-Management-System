@@ -29,7 +29,6 @@ export async function registerUser(req: Request, res: Response) {
     //----------------------------------------
 
     // Generating security and metadata fields
-
     CryptographyFactory.generatePasswordHash(user.password,
         12,
 

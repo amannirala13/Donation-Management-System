@@ -24,7 +24,7 @@ app.use(cors({
     origin: ["http://localhost:5173", "http://172.20.10.2:5173", "http://172.20.10.2:3000", "http://localhost:3000"]
 }));
 
-
+// These routes doesn't require an auth token to be included in the request for access (for obvious reasons)
 app.post(`/${PathName.login}`, loginUser);
 app.post(`/${PathName.register}`, registerUser);
 app.post(`/${PathName.sendPasswordResetLink}`, sendPasswordResetLink);
@@ -33,7 +33,7 @@ app.post(`/${PathName.sendPasswordResetLink}`, sendPasswordResetLink);
 app.use(authHeaderMiddleWare);
 app.use(authMiddleWare);
 
-// Using router post AuthPage middlewares
+// Using router post AuthPage middlewares -- Needs auth token to be bound in the request for restricted access
 app.use("/", Router);
 
 dns.setServers(['8.8.8.8', '8.8.4.4']);
