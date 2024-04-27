@@ -6,4 +6,7 @@ export default {
     sendPasswordResetLink: "send-password-reset-link",
     getCurrentUserProfile: "get-current-user-profile",
     getCurrentUserReferralNetwork: "get-current-user-referral-network",
+    getCampaignById: "get-campaign-by-id",
+    getAllCampaigns: "get-all-campaigns",
+    updateCampaignById: "update-campaign-by-id",
 }
