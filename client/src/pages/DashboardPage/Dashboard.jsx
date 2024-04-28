@@ -21,21 +21,20 @@ export function Dashboard({}){
     return (
         <div>
             <div className={"grid grid-cols-2 mb-32 mt-2"}>
-                <div className={"ml-8"}>
-                    <span className={"font-black text-4xl"}>Your Campaigns</span><br/><br/>
-                    <span>All your campaigns are listed here. You can manage or view your existing campaigns or<br/>create a new one using the Add new campaign button</span>
-                </div>
                 <div className={"grid place-content-end"}>
-                    <Button colorScheme={"orange"} onClick={onSubmit} >Add new campaign</Button>
+                    <span>All your campaigns are listed here. You can manage or view your existing campaigns. <br/>
+                        Bring a change today for a better tomorrow.</span><br/><br/>
+                    <Button colorScheme={"orange"} className={"hover:scale-110"} onClick={onSubmit}>Add new campaign</Button>
+>>>>>>> c1af08a (Rebasing)
                 </div>
             </div>
-            <TableContainer>
+            <TableContainer className={"mx-8"}>
                 <Table variant='simple'>
                     <TableCaption>List of your campaigns</TableCaption>
                     <Thead>
                         <Tr>
                             <Th>Date</Th>
-                            <Th>Title</Th>
+                            <Th><span className={"font-bold"}>Title</span></Th>
                             <Th isNumeric>Funds raised</Th>
                             <Th isNumeric>Target</Th>
                             <Th>Status</Th>
@@ -45,7 +44,7 @@ export function Dashboard({}){
                     <Tbody>
                         <Tr>
                             <Td>13/10/2023</Td>
-                            <Td><span className={"font-black text-lg"}>Old Age Home</span></Td>
+                            <Td><span className={"font-bold text-lg"}>Old Age Home</span></Td>
                             <Td isNumeric>23000</Td>
                             <Td isNumeric>100000</Td>
                             <Td>Active</Td>
@@ -56,7 +55,7 @@ export function Dashboard({}){
                         </Tr>
                         <Tr>
                             <Td>13/10/2023</Td>
-                            <Td><span className={"font-black text-lg"}>Old Age Home</span></Td>
+                            <Td><span className={"font-bold text-lg"}>Old Age Home</span></Td>
                             <Td isNumeric>23000</Td>
                             <Td isNumeric>100000</Td>
                             <Td>Active</Td>
@@ -69,7 +68,7 @@ export function Dashboard({}){
                     <Tfoot>
                         <Tr>
                             <Th>Date</Th>
-                            <Th>Title</Th>
+                            <Th><span className={"font-bold"}>Title</span></Th>
                             <Th isNumeric>Funds raised</Th>
                             <Th isNumeric>Target</Th>
                             <Th>Status</Th>
