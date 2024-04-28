@@ -25,7 +25,11 @@ export function Dashboard({}){
                     <span className={"font-black text-4xl"}>Your Campaigns</span><br/><br/>
                     <span>All your campaigns are listed here. You can manage or view your existing campaigns. <br/>
                         Bring a change today for a better tomorrow.</span><br/><br/>
+<<<<<<< HEAD
                     <Button colorScheme={"orange"} className={"hover:scale-110"} onClick={onSubmit}>Add new campaign</Button>
+=======
+                    <Button colorScheme={"orange"} className={"hover:scale-110"}>Add new campaign</Button>
+>>>>>>> refs/remotes/origin/main
                 </div>
             </div>
             <TableContainer className={"mx-8"}>
