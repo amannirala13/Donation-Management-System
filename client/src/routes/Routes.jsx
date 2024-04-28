@@ -8,12 +8,14 @@ import ForgotPasswordContainer from "../components/ForgotPasswordContainer/index
 import {CampaignDetails} from "../pages/Campaign/CampaignDetails";
 import {LandingPage} from "../pages/LandingPage/LandingPage";
 import {Dashboard} from "../pages/DashboardPage/Dashboard";
+import CreateCampaign from "../pages/DashboardPage/CreateCampaign.jsx";
 
 export const MainRoutes = [
     getComponentObj("", <LandingPage/>),
     getComponentObj("/campaign/:id", <CampaignDetails/>),
     getComponentObj(`${Paths.main.auth}/*`, <AuthPage/>),
     getComponentObj(`${Paths.main.dashboard}/*`, <DashboardPage/>),
+    getComponentObj(`${Paths.main.create_campaign}/*`, <CreateCampaign/>),
 ]
 
 export const AuthRoutes = [

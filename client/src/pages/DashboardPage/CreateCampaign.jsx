@@ -1,10 +1,10 @@
 import {Button, Input, InputGroup, InputRightAddon} from "@chakra-ui/react";
 import {useNavigate} from "react-router-dom";
 import Paths from "../../routes/Paths.js";
-export default function CreateCampaignContainer({className, children}){
+import {useEffect, useState} from "react";
+export default function CreateCampaign({className, children}){
 
     const nav = useNavigate();
-
     const [title, setTitle] = useState("");
     const [description, setDescription] = useState("");
     const [goalAmount, setGoalAmount] = useState("");
@@ -13,13 +13,13 @@ export default function CreateCampaignContainer({className, children}){
     const [year, setYear] = useState(null);
 
     const onSubmit = ()=>{
-        const campaign = new campaign(
+        const campaign = new CreateCampaign(
             {
                 title: title,
                 description: description,
                 createdOn: {day: day, month: month, year: year},
             }); 
-        createCampaign(campaign)
+        CreateCampaign(campaign)
             .then((res)=>{
                 if(res.success === true){
                     nav(`/${Paths.main.dashboard}`)

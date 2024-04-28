@@ -9,8 +9,15 @@ import {
     TableCaption,
     TableContainer, Button,
 } from '@chakra-ui/react'
+import {useNavigate} from "react-router-dom";
+import Paths from "../../routes/Paths.js";
+
+const onSubmit = ()=>{
+        nav(`${Paths.main.create_campaign}`);
+}
 
 export function Dashboard({}){
+    const nav = useNavigate()
     return (
         <div>
             <div className={"grid grid-cols-2 mb-32 mt-2"}>
@@ -19,7 +26,7 @@ export function Dashboard({}){
                     <span>All your campaigns are listed here. You can manage or view your existing campaigns or<br/>create a new one using the Add new campaign button</span>
                 </div>
                 <div className={"grid place-content-end"}>
-                    <Button colorScheme={"orange"}>Add new campaign</Button>
+                    <Button colorScheme={"orange"} onClick={onSubmit} >Add new campaign</Button>
                 </div>
             </div>
             <TableContainer>

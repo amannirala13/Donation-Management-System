@@ -2,6 +2,7 @@ export default {
     main: {
         dashboard: "dashboard",
         auth: "auth",
+        create_campaign: "create_campaign",
     },
     auth: {
         login: "login",
@@ -12,6 +13,5 @@ export default {
     dashboard: {
         home: "home",
         deposit: "deposit",
-        referral: "referral",
     }
 }
