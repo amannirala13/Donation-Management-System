@@ -12,20 +12,20 @@ import {
 import {useNavigate} from "react-router-dom";
 import Paths from "../../routes/Paths.js";
 
-const onSubmit = ()=>{
-        nav(`${Paths.main.create_campaign}`);
-}
-
 export function Dashboard({}){
     const nav = useNavigate()
+    const onSubmit = ()=>{
+        nav(`${Paths.main.create_campaign}`);
+    }
+
     return (
         <div>
             <div className={"grid grid-cols-2 mb-32 mt-2"}>
-                <div className={"grid place-content-end"}>
+                <div className={"ml-8"}>
+                    <span className={"font-black text-4xl"}>Your Campaigns</span><br/><br/>
                     <span>All your campaigns are listed here. You can manage or view your existing campaigns. <br/>
                         Bring a change today for a better tomorrow.</span><br/><br/>
                     <Button colorScheme={"orange"} className={"hover:scale-110"} onClick={onSubmit}>Add new campaign</Button>
->>>>>>> c1af08a (Rebasing)
                 </div>
             </div>
             <TableContainer className={"mx-8"}>

@@ -1,4 +1,4 @@
-import {Button, Input, InputGroup, InputRightAddon} from "@chakra-ui/react";
+import {Button, Input, InputGroup, InputRightAddon, Textarea} from "@chakra-ui/react";
 import {useNavigate} from "react-router-dom";
 import Paths from "../../routes/Paths.js";
 import {useEffect, useState} from "react";
@@ -37,36 +37,58 @@ export default function CreateCampaign({className, children}){
                     <div className={"w-full font-left font-bold pb-4 text-4xl"}>Create a new campaign</div>
                     <div>Please provide us with details of your campaign.</div>
                     <div className={"grid gap-2 w-full pt-12"}>
-                        <div>Title of your Campaign</div>
-                        
-                        <div>Title of your Campaign</div>
+
+                        <div className={"font-bold mb-2 text-2xl"}>Let's get to know your cause</div>
                         <Input placeholder={"Enter your title here"}
+                               className={"text-3xl"}
                                value={title}
-                               onChange={(e)=>{setTitle(e.target.value)}} required/>
-                        <Input placeholder={"A brief description about your campaign"}
-                               value={description}
-                               onChange={(e)=>{setDescription(e.target.value)}}/>
+                               variant={"filled"}
+                               onChange={(e) => {
+                                   setTitle(e.target.value)
+                               }} required/>
+                        <div className={"font-bold mb-2 mt-8 text-2xl"}>Please describe your cause in details</div>
+                        <Textarea placeholder={"A brief description about your campaign"}
+                                  value={description}
+                                  variant={"filled"}
+                                  onChange={(e) => {
+                                      setDescription(e.target.value)
+                                  }}/>
+                        <div className={"font-bold mb-2 mt-8 text-2xl"}>How much are we trying to raise?</div>
                         <Input placeholder={"Enter the fund to be raised"}
                                value={goalAmount}
-                               onChange={(e)=>{setGoalAmount(e.target.value)}}/>
-                        <div>To be raised before</div>
+                               variant={"filled"}
+                               onChange={(e) => {
+                                   setGoalAmount(e.target.value)
+                               }}/>
+                        <div className={"font-bold mb-2 mt-8 text-2xl"}>When is your campaign ending?</div>
                         <div className={"grid grid-flow-col gap-2"}>
                             <Input placeholder={"Day"}
                                    value={day}
                                    type={"number"}
-                                   onChange={(e)=>{setDay(e.target.value)}}/>
+                                   variant={"filled"}
+                                   onChange={(e) => {
+                                       setDay(e.target.value)
+                                   }}/>
                             <Input placeholder={"Month"}
                                    value={month}
                                    type={"number"}
-                                   onChange={(e)=>{setMonth(e.target.value)}}/>
+                                   variant={"filled"}
+                                   onChange={(e) => {
+                                       setMonth(e.target.value)
+                                   }}/>
                             <Input placeholder={"Year"}
                                    value={year}
                                    type={"number"}
-                                   onChange={(e)=>{setYear(e.target.value)}}/>
+                                   variant={"filled"}
+                                   onChange={(e) => {
+                                       setYear(e.target.value)
+                                   }}/>
                         </div>
                         <div className={"w-full flex justify-between mt-8"}>
-                            <Button variant={"link"} onClick={()=>{nav(`../${Paths.dashboard}`)}}>Click here to see your campaigns</Button>
-                            <Button className={"px-12"} size={"lg"} onClick={onSubmit}>Submit</Button>
+                            <Button variant={"link"} onClick={() => {
+                                nav(`../${Paths.dashboard}`)
+                            }}>View your campaigns</Button>
+                            <Button className={"px-36"} size={"lg"} colorScheme={"orange"} onClick={onSubmit}>Submit</Button>
                         </div>
                     </div>
                 </div>

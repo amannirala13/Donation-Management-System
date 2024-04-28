@@ -14,8 +14,7 @@ export const MainRoutes = [
     getComponentObj("", <LandingPage/>),
     getComponentObj("/campaign/:id", <CampaignDetails/>),
     getComponentObj(`${Paths.main.auth}/*`, <AuthPage/>),
-    getComponentObj(`${Paths.main.dashboard}/*`, <DashboardPage/>),
-    getComponentObj(`${Paths.main.create_campaign}/*`, <CreateCampaign/>),
+    getComponentObj(`${Paths.main.dashboard}/*`, <DashboardPage/>)
 ]
 
 export const AuthRoutes = [
@@ -26,6 +25,7 @@ export const AuthRoutes = [
 
 export const DashboardRoutes = [
     getComponentObj("/", <Dashboard/>),
+    getComponentObj(`/${Paths.main.create_campaign}/*`, <CreateCampaign/>),
 ]
 
 function getComponentObj(path, component){
